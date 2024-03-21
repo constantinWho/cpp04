@@ -1,24 +1,24 @@
-#include "../inc/Cat.hpp"
+#include "../inc/WrongCat.hpp"
 
-Cat::Cat() {
-	setType("Cat");
+WrongCat::WrongCat() {
+	setType("WrongCat");
 	std::cout << "A [" << getType()
 	<< "] Constructor was called." << std::endl;
 }
 
-Cat::~Cat() {
+WrongCat::~WrongCat() {
 	std::cout << "A [" << getType()
 	<< "] Destructor was called." << std::endl;
 	setType("Animal");
 }
 
-Cat::Cat( const Cat& other) {
+WrongCat::WrongCat( const WrongCat& other) {
 	type = other.type;
 	std::cout << "A [" << getType()
 	<< "] copy constructor was called." << std::endl;
 }
 
-Cat& Cat::operator=( const Cat& other) {
+WrongCat& WrongCat::operator=( const WrongCat& other) {
 	if (this != &other)
 	{
 		type = other.type;
@@ -28,7 +28,7 @@ Cat& Cat::operator=( const Cat& other) {
 	return *this;
 }
 
-void Cat::makeSound() const{
+void WrongCat::makeSound() const{
 	std::cout << "A [" << getType()
-	<< "] makes: Miau, Miau! 🐱" << std::endl;
+	<< "] makes: WrongMiau, WrongMiau! 🐯" << std::endl;
 }

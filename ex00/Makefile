@@ -4,7 +4,7 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-FILES = main src/Animal src/Dog src/Cat
+FILES = main src/Animal src/Dog src/Cat src/WrongAnimal src/WrongCat
 OBJ = $(FILES:=.o)
 
 all: $(NAME)
