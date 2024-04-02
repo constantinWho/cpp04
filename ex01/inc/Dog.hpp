@@ -9,7 +9,7 @@
 class Dog : public Animal {
 
 	private:
-		Brain* brain;
+		Brain* _brain;
 	public:
 		// Constructors and Destructor
 		Dog();
@@ -18,7 +18,8 @@ class Dog : public Animal {
 		~Dog();
 
 		// Action
-		void makeSound() const;
+		void		makeSound() const;
+		std::string	getIdeaFromBrain(int index) const;
 };
 
 #endif

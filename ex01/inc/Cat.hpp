@@ -9,7 +9,7 @@
 class Cat : public Animal {
 
 	private:
-		Brain *brain;
+		Brain *_brain;
 	public:
 		// Constructors and Destructor
 		Cat();
@@ -19,6 +19,7 @@ class Cat : public Animal {
 
 		// Action
 		void makeSound() const;
+		std::string	getIdeaFromBrain(int index) const;
 };
 
 #endif

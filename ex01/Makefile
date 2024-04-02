@@ -1,7 +1,7 @@
 NAME = getSomeBrain
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 RM = rm -rf
 
 FILES = main src/Animal src/Dog src/Cat src/WrongAnimal src/WrongCat src/Brain

@@ -1,32 +1,43 @@
-#include "inc/Animal.hpp"
-#include "inc/Dog.hpp"
-#include "inc/Cat.hpp"
+#include "./inc/Animal.hpp"
+#include "./inc/Cat.hpp"
+#include "./inc/Dog.hpp"
 
-#include "inc/WrongAnimal.hpp"
-#include "inc/WrongCat.hpp"
 
-int main()
+int main() {
+    const Animal* j = new Cat();
+
+
+    // Call the copy constructor explicitly
+    const Cat* CatCopy = new Cat(*dynamic_cast<const Cat*>(j));
+
+    std::cout << CatCopy->getIdeaFromBrain(5) << std::endl;
+    std::cout << j->getIdeaFromBrain(5) << std::endl;
+
+
+    delete j;
+    delete CatCopy; // Remember to delete the dynamically allocated copy
+
+    return 0;
+}
+
+int test()
 {
-	const Animal* meta = new Animal();
-	const Animal* dog = new Dog();
-	const Animal* cat = new Cat();
-	std::cout << dog->getType() << " type " << std::endl;
-	std::cout << cat->getType() << " " << std::endl;
-	cat->makeSound(); //will output the cat sound!
-	dog->makeSound();
-	meta->makeSound();
+	//const Animal* animal = new Animal();
+	const Animal* j = new Dog();
+	//const Animal* i = new Cat();
+	//const Dog* dog__ = new Dog();
 
-	delete dog;
-	delete cat;
-	delete meta;
+	const Animal* copy(j);
 
-	const WrongAnimal* wrongMeta = new WrongAnimal();
-	const WrongAnimal* wrongCat = new WrongCat();
-	std::cout << wrongCat->getType() << " " << std::endl;
-	wrongCat->makeSound(); //will output the WrongCat sound!
-	wrongMeta->makeSound();
+	std::cout << copy->getIdeaFromBrain(5)<< std::endl;
+	//std::cout << j->getIdeaFromBrain(5)<< std::endl;
+	//std::cout << animal->getIdeaFromBrain(5)<< std::endl;
+	//std::cout << i->getIdeaFromBrain(5)<< std::endl;
 
-	delete wrongCat;
-	delete wrongMeta;
+/* 	delete animal;
+	delete j;
+	delete i; */
+	delete j;
+
 	return 0;
 }

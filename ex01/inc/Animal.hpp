@@ -22,6 +22,7 @@ class Animal {
 
 		// Getter
 		std::string getType() const;
+		virtual std::string getIdeaFromBrain(int ideaNumber) const;
 
 		// Setter
 		void setType(std::string type);
