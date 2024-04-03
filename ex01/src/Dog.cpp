@@ -36,12 +36,19 @@ Dog::Dog(const Dog& other) {
 	}
 }
 
-Dog& Dog::operator=( const Dog& other) {
-	if (this != &other)
-	{
-		type = other.type;
-		std::cout << "A [" << getType()
-		<< "] copy assigment operator was called." << std::endl;
+Dog& Dog::operator=(const Dog& other) {
+	if (this != &other) {
+		setType(other.getType() + "_CopyAss");
+		delete _brain;
+		try {
+			_brain = new Brain(*other._brain);
+		} catch (const std::bad_alloc& message) {
+			std::cout << "No 🧠 for Dog: " << message.what() << std::endl;
+		}
+		std::cout << "A [" << getType() << "] copy assignment operator was called." << std::endl;
+		for (int i = 0; i < 100; i++) {
+			_brain->setIdea(i, "+++[CopyAss] Oh, look!!! Idea from ", getType());
+		}
 	}
 	return *this;
 }

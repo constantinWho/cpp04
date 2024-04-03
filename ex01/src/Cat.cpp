@@ -11,7 +11,7 @@ Cat::Cat() {
 		std::cout << "No 🧠 for Cat: " << message.what() << std::endl;
 	}
 	for (int i = 0; i < 100; i++) {
-		_brain->setIdea(i, "____ Oh, look!!! Idea from ", getType());
+		_brain->setIdea(i, "+++[Cat] Oh, look!!! Idea from ", getType());
 	}
 }
 
@@ -23,25 +23,32 @@ Cat::~Cat() {
 }
 
 Cat::Cat(const Cat& other) {
-	setType(other.getType() + "_Copy"); // Copy the type
+	setType(other.getType() + "_Copy");
 	std::cout << "A [" << getType() << "] copy constructor was called." << std::endl;
 
 	try {
-		_brain = new Brain(*other._brain); // Create a deep copy of the Brain object
+		_brain = new Brain(*other._brain);
 	} catch (const std::bad_alloc& message) {
 		std::cout << "No 🧠 for Cat: " << message.what() << std::endl;
 	}
 	for (int i = 0; i < 100; i++) {
-		_brain->setIdea(i, "Copy____ Oh, look!!! Idea from ", getType());
+		_brain->setIdea(i, "+++[Copy]____ Oh, look!!! Idea from ", getType());
 	}
 }
 
-Cat& Cat::operator=( const Cat& other) {
-	if (this != &other)
-	{
-		type = other.type;
-		std::cout << "A [" << getType()
-		<< "] copy assigment operator was called." << std::endl;
+Cat& Cat::operator=(const Cat& other) {
+	if (this != &other) {
+		setType(other.getType() + "_CopyAss");
+		delete _brain;
+		try {
+			_brain = new Brain(*other._brain);
+		} catch (const std::bad_alloc& message) {
+			std::cout << "No 🧠 for Cat: " << message.what() << std::endl;
+		}
+		std::cout << "A [" << getType() << "] copy assignment operator was called." << std::endl;
+		for (int i = 0; i < 100; i++) {
+			_brain->setIdea(i, "+++[CopyAss] Oh, look!!! Idea from ", getType());
+		}
 	}
 	return *this;
 }

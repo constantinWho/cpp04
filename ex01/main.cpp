@@ -4,7 +4,7 @@
 
 
 int main() {
-    const Animal* j = new Cat();
+/*     const Animal* j = new Cat();
 
 
     // Call the copy constructor explicitly
@@ -15,9 +15,17 @@ int main() {
 
 
     delete j;
-    delete CatCopy; // Remember to delete the dynamically allocated copy
+    delete CatCopy; // Remember to delete the dynamically allocated copy */
+	Dog cat1;
+	Dog cat2;
 
-    return 0;
+	cat2 = cat1;
+
+	std::cout << cat1.getIdeaFromBrain(5) << std::endl;
+	std::cout << cat2.getIdeaFromBrain(5) << std::endl;
+
+
+	return 0;
 }
 
 int test()
