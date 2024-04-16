@@ -4,9 +4,10 @@
 # include <iostream>
 # include <string>
 # include "./Animal.hpp"
+# include "./AnimalBase.hpp"
 # include "./Brain.hpp"
 
-class Dog : public Animal {
+class Dog : public AnimalBase {
 
 	private:
 		Brain* _brain;

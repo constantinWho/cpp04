@@ -1,4 +1,4 @@
-NAME = getSomeBrain
+NAME = iAmSoAbstract
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g3

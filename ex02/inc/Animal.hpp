@@ -9,6 +9,7 @@ class Animal {
 
 	protected:
 		std::string	type;
+
 	public:
 		// Constructors and Destructor
 		Animal();
@@ -17,7 +18,7 @@ class Animal {
 		virtual ~Animal();
 
 		// Action
-		virtual void makeSound() const = 0;
+		virtual void makeSound() const;
 
 		// Getter
 		std::string getType() const;
