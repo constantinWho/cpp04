@@ -18,11 +18,11 @@ class Animal {
 		virtual ~Animal();
 
 		// Action
-		virtual void makeSound() const;
+		virtual void makeSound() const = 0;
 
 		// Getter
 		std::string getType() const;
-		virtual std::string getIdeaFromBrain(int ideaNumber) const;
+		virtual std::string getIdeaFromBrain(int ideaNumber) const = 0;
 
 		// Setter
 		void setType(std::string type);

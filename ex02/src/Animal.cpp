@@ -44,3 +44,4 @@ std::string Animal::getIdeaFromBrain(int ideaNumber) const {
 	std::cout << "No Dog/Cat, no 🧠. Just a numeber: " << ideaNumber << std::endl;
 	return "Empty 🧠";
 }
+
